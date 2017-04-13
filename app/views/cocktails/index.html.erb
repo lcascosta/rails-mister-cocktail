@@ -2,7 +2,7 @@
   <h1>Cocktails Menu</h1>
   <br>
   <% @cocktails.each do |cocktail| %>
-    <h4><%= cocktail.name %></h4>
-    <%= link_to "See details", cocktail_path(cocktail), {class: "btn btn-primary"} %></li>
+    <h3><%= cocktail.name %></h3>
+    <%= link_to "See details", cocktail_path(cocktail), {class: "btn btn-primary"} %>
   <% end %>
 </div>
