@@ -1,8 +1,20 @@
 <div class="container text-center">
   <h1>Cocktails Menu</h1>
   <br>
-  <% @cocktails.each do |cocktail| %>
-    <h3><%= cocktail.name %></h3>
-    <%= link_to "See details", cocktail_path(cocktail), {class: "btn btn-primary"} %>
-  <% end %>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-md-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(<%= asset_url('beer.jpg') %>);">
+          <div class="card-category">The best drinks</div>
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+            <br>
+            <%= link_to "See details", cocktail_path(cocktail), {class: "btn btn-primary"} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+
