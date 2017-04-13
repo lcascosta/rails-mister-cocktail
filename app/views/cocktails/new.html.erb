@@ -1,11 +1,11 @@
 <div class="container text-center">
   <h1>New Cocktail</h1>
   <%= simple_form_for(@cocktail) do |f| %>
-  <%= f.error_notification %>
+    <%= f.error_notification %>
 
-  <%= f.input :name, label: "Name:" %>
+    <%= f.input :name, label: "Name:" %>
 
-  <%= f.button :submit, {class: "navbar-wagon-item navbar-wagon-button btn"} %>
-<% end %>
+    <%= f.button :submit, {class: "navbar-wagon-item navbar-wagon-button btn"} %>
+  <% end %>
 </div>
 

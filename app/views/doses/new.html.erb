@@ -2,10 +2,8 @@
   <h1>Add a dose to <%= @cocktail.name %></h1>
   <%= simple_form_for([@cocktail, @dose]) do |f| %>
   <%= f.error_notification %>
-
+  <%= f.input :ingredient_id, label: "Choose an ingredient:", collection: @ingredients %>
   <%= f.input :description, label: "Dose description:" %>
-  <%= f.input :description, label: "Choose an ingredient:", collection: @ingredients %>
-
   <%= f.button :submit, {class: "navbar-wagon-item navbar-wagon-button btn"} %>
 <% end %>
 </div>

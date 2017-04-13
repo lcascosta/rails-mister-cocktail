@@ -1,5 +1,17 @@
 <div class="container text-center">
+  <br>
   <h1><%= @cocktail.name %></h1>
   <br>
-  <%= link_to "Add a dose to this Cocktail!", new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"} %>
+  <h3><b>Doses:</b></h3>
+  <% @cocktail.doses.each do |dose| %>
+    <h3><%= dose.description %> of <%= dose.ingredient.name %></h3>
+    <%= link_to "Delete this dose", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <ul class="list-inline">
+    <li><%= link_to "Add a dose to this Cocktail!", new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"} %></li>
+    <li><%= link_to "Back to Cocktails", cocktails_path, {class: "navbar-wagon-item navbar-wagon-button btn"} %></li>
+  </ul>
 </div>
