@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 require 'json'
+require 'faker'
 
 url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 user_serialized = open(url).read
@@ -17,4 +18,11 @@ user = JSON.parse(user_serialized)
   ingr_name = ingr_hash["strIngredient1"]
   Ingredient.create(name: ingr_name)
 end
+
+4.times do
+  Cocktail.create(name: Faker::Beer.name)
+end
+
+
+
 
